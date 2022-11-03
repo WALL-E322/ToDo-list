@@ -1,0 +1,36 @@
+<div class="main-container">
+  <form [formGroup]="newTask" (ngSubmit)="onSubmit()" novalidate>
+    <div class="modal-box">
+      <h1 class="title">Edit Task</h1>
+      <div class="insert-box">
+        <label class="title" for="Title">Title: </label>
+        <input
+          matInput
+          type="text"
+          id="title"
+          name="title"
+          formControlName="title"
+        />
+      </div>
+      <div class="insert-box">
+        <label class="title" for="date">Date: </label>
+        <input type="date" id="date" name="date" formControlName="date" />
+      </div>
+
+      <div class="insert-box">
+        <label class="title" for="description">Description: </label>
+        <input
+          type="text"
+          id="description"
+          name="description"
+          formControlName="description"
+        />
+      </div>
+
+      <div class="btns">
+        <button mat-raised-button routerLink="/">Go back</button>
+        <button mat-raised-button>Edit</button>
+      </div>
+    </div>
+  </form>
+</div>

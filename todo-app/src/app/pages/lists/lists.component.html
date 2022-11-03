@@ -1,0 +1,84 @@
+<div class="main-container">
+  <div class="container">
+    <nav class="navbar">
+      <a class="dashboard-link" routerLink="/dashboard">Dashboard</a>
+      <a class="selected" routerLink="/lists">Lists</a>
+      <a class="completed-link" routerLink="/completed">Completed</a>
+    </nav>
+
+    <div class="lists-container">
+      <div class="sidebar">
+        <h1 class="title">Lists</h1>
+
+        <div class="list-menu">
+          <a
+            class="list-menu-item"
+            *ngFor="let list of lists"
+            [routerLink]="['/lists', list._id]"
+            routerLinkActive="active-list"
+            >{{ list.title }}
+          </a>
+        </div>
+      </div>
+
+      <div class="tasks-list-container">
+        <h1 class="title">List Tasks</h1>
+        <ng-container *ngIf="selectedListId">
+          <div
+            class="tasks"
+            *ngFor="let task of tasks | taskFilter: selectedListId"
+          >
+            <ng-container *ngIf="!task.done">
+              <mat-card class="task-card" (dblclick)="moveTask(task._id)">
+                <div class="task-info">
+                  <div class="titles">
+                    <mat-card-title>{{ task.title }}</mat-card-title>
+                    <mat-card-title>{{ task.date | date }}</mat-card-title>
+                  </div>
+                  <mat-card-content>
+                    <p>
+                      {{ task.description }}
+                    </p>
+                  </mat-card-content>
+                </div>
+                <mat-card-actions>
+                  <button
+                    mat-fab
+                    class="edit-btn btns"
+                    aria-label="Example icon button with a edit icon"
+                    routerLink="/{{ task._id }}/edit-task"
+                  >
+                    <mat-icon>edit</mat-icon>
+                  </button>
+
+                  <button
+                    mat-fab
+                    class="check-btn btns"
+                    aria-label="Example icon button with a check icon"
+                    (click)="completeTask(task._id, task)"
+                  >
+                    <mat-icon>check</mat-icon>
+                  </button>
+
+                  <button
+                    mat-fab
+                    class="delete-btn btns"
+                    aria-label="Example icon button with a delete icon"
+                    (click)="deleteTask(task._id)"
+                  >
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </mat-card-actions>
+              </mat-card>
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="add-btns">
+      <button mat-raised-button routerLink="/new-list">Add List</button>
+      <button mat-raised-button routerLink="./new-task">Add Task</button>
+    </div>
+  </div>
+</div>

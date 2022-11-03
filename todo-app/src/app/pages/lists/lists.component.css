@@ -1,0 +1,126 @@
+.lists-container{
+    display: flex;
+    flex-grow: 20;
+    height: 100%;
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+
+    width: 250px;
+    height: 100%;
+
+    border-bottom-left-radius:  20px ;
+}
+
+.tasks-list-container{
+    flex-grow: 2;
+}
+
+
+.task-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    background-color: var(--orange);
+    margin: 7px 20px;
+    width: 96%;
+}
+
+.task-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+}
+
+.titles{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btns{
+    margin: 0 10px;
+}
+
+
+.add-btns{
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+
+.add-btns button{
+    font-size: 24px;
+    font-family: 'Ubuntu';
+    background-color: var(--orange);
+    color: var(--darkblue);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.add-btns button:hover{
+    background-color: var(--gray);;
+    color: var(--white);
+}
+
+.list-menu{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    flex-grow: 1;
+}
+
+.list-menu-item {
+    display: flex;
+
+    padding: 20px 30px;
+    width: 100%;
+    margin-bottom: 10px;
+
+    background-color: var(--orange);
+    color: var(--darkblue);
+    text-decoration: none;
+
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+
+.list-menu-item:hover, .active-list{
+    background-color: var(--gray);;
+    color: var(--white);
+}
+
+
+
+.selected{
+    background-color: var(--gray);
+    color: var(--white);
+    font-weight:bold ;
+}
+
+.check-btn{
+ background-color: var(--green);
+}
+
+.edit-btn{
+    background-color: var(--lightblue);
+}
+
+.delete-btn {
+    background-color: var(--red);
+}
+
+.title{
+    margin-left: 20px;
+    margin-top: 5px;
+    color: var(--white);
+}
+

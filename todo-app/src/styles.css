@@ -1,0 +1,114 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+*{
+    --darkblue: #5e6aad;
+    --orange: #e7c449;
+    --gray: #808080 ;
+    --white:  rgb(228, 235, 235);
+    --green: #0f601c;
+    --lightblue: #3050a4;
+    --red: #9e1b1b;
+
+    box-sizing: border-box ;
+}
+
+
+body {
+    background-color: var(--white);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Ubuntu'; }
+
+
+
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+
+    background-color: var(--darkblue);
+
+    width: 100%;
+    height: 100%;
+    max-width: 1000px;
+    max-height: 680px;
+
+    border-radius: 20px;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--orange);
+    width: 100%;
+    height: 84px;
+
+    border-top-left-radius: 20px ;
+    border-top-right-radius: 20px ;
+}
+
+.navbar *{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    text-decoration: none;
+    color: var(--darkblue);
+    font-size: 24px;
+
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.navbar a:hover{
+    background-color: var(--gray);;
+    color: var(--white);
+}
+
+.dashboard-link {
+    border-top-left-radius: 20px ;
+}
+
+.completed-link{
+    border-top-right-radius: 20px ;
+}
+
+
+.selected{
+    background-color: var(--gray);
+    color: var(--white);
+    font-weight:bold ;
+}
+
+.check-btn{
+ background-color: var(--green);
+}
+
+.edit-btn{
+    background-color: var(--lightblue);
+}
+
+.delete-btn {
+    background-color: var(--red);
+}
+

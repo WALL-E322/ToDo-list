@@ -1,0 +1,37 @@
+<div class="main-container">
+  <div class="container">
+    <nav class="navbar">
+      <a class="dashboard-link" routerLink="/dashboard">Dashboard</a>
+      <a routerLink="/lists">Lists</a>
+      <a class="completed-link selected" routerLink="/completed">Completed</a>
+    </nav>
+    <div class="tasks-container">
+      <h1 class="title">Completed Tasks</h1>
+      <div class="tasks" *ngFor="let task of tasks">
+        <ng-container *ngIf="task.done">
+          <mat-card class="task-card">
+            <div class="task-info">
+              <div class="titles">
+                <mat-card-title>{{ task.title }}</mat-card-title>
+                <mat-card-title>{{ task.date | date }}</mat-card-title>
+              </div>
+              <mat-card-content>
+                <p>{{ task.description }}</p>
+              </mat-card-content>
+            </div>
+            <mat-card-actions>
+              <button
+                mat-fab
+                class="delete-btn btns"
+                aria-label="Example icon button with a delete icon"
+                (click)="deleteTask(task._id)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

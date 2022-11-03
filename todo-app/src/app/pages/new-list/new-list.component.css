@@ -1,0 +1,71 @@
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.modal-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 350px ;
+    width: 100%;
+    max-width: 700px;
+    padding: 35px;
+    background-color: var(--darkblue);
+}
+
+.btns {
+    align-self: flex-end;
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+}
+
+.insert-box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin:5px 10px;
+}
+
+input{
+    margin-left: 15px;
+    background-color: var(--gray);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    flex-grow: 2;
+    height: 35px;
+    outline: none;
+}
+.btns button{
+    font-size: 24px;
+    font-family: 'Ubuntu';
+    background-color: var(--orange);
+    color: var(--darkblue);
+
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+
+    margin: 5px 10px;
+    transition: all 0.5s ease;
+}
+
+.btns button:hover{
+    background-color: var(--gray);;
+    color: var(--white);
+}
+
+.title{
+    margin-left: 20px;
+    margin-top: 5px;
+    color: var(--white);
+}
